@@ -64,6 +64,7 @@ for (let i = 0; i < sections.length; i++) {
 // Add class 'active' to section when near top of viewport
 window.addEventListener('scroll', function () {
   const sections = document.getElementsByTagName('section')
+  let section
   for (section of sections) {
     const activeNavLi = document.getElementById(`section${section.dataset.nav.slice(8, 9)}`);
     console.log(section.dataset.nav.slice(8, 9));
