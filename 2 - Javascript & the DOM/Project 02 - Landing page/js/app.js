@@ -58,7 +58,7 @@ const ulNav = document.getElementById('navbar__list')
 
 /* For each section, add a li element in the navigation menu with the hyperlink to the section */
 for (let i = 0; i < sections.length; i++) {
-  ulNav.appendChild(createListElement(sections[i].id, sections[i].dataset.nav));
+  ulNav.appendChild(createListElement(sections[i].id, sections[i].dataset.nav))
 };
 
 // Add class 'active' to section when near top of viewport
@@ -66,15 +66,15 @@ window.addEventListener('scroll', function () {
   const sections = document.getElementsByTagName('section')
   let section
   for (section of sections) {
-    const activeNavLi = document.getElementById(`section${section.dataset.nav.slice(8, 9)}`);
-    console.log(section.dataset.nav.slice(8, 9));
+    const activeNavLi = document.getElementById(`section${section.dataset.nav.slice(8, 9)}`)
+    console.log(section.dataset.nav.slice(8, 9))
 
     if (isInViewport(section)) {
-      section.classList.add('active_section');
-      activeNavLi.className = 'active_section';
+      section.classList.add('active_section')
+      activeNavLi.className = 'active_section'
       console.log(`${section.dataset.nav} is in viewport!`)
     } else {
-      section.classList.remove('active_section');
+      section.classList.remove('active_section')
       activeNavLi.className = ''
       console.log(`${section.dataset.nav} is NOT in viewport!`)
     }
