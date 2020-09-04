@@ -27,10 +27,10 @@
 /* Create a li element for the navigation menu */
 function createListElement (href, text) {
     const newList = document.createElement('li');
-    newList.innerHTML = "'<a href='#" + href + "'>" + text + "</a>'";
+    /* newList.classList.add('menu__link'); */
+    newList.innerHTML = "<a href='#" + href + "' class='menu__link'>" + text + "</a>";
     return newList;
 }
-
 
 /**
  * End Helper Functions
