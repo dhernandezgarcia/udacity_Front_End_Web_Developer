@@ -2,12 +2,35 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Interface and Architecture](#interface-and-architecture)
+* [Behavior](#behavior)
 
-## Instructions
+## Interface and Architecture
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+**Usability**
 
-To get started, open `js/app.js` and start building out the app's functionality
+All feature are usable across modern desktop, table and phone browsers.
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+**Styling** 
+
+Styling has been added for active states.
+
+**HTML structure**
+
+There are at least 4 sections that have been added to the page.
+
+## Behavior
+
+The customized landing page has the following behavior:
+
+**Navigation**
+
+Navigation is built dynamically as an unordered list.
+
+**Section Active State**
+
+While scrolling through the page, the section in the viewport will be highlighted.
+
+**Scroll to Anchor**
+
+When clicking an item from the navigation menu, the link scrolls smoothly to the appropriate section.
