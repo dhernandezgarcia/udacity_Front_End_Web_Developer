@@ -23,3 +23,11 @@ app.use(cors())
 app.use(express.static('website'))
 
 // Setup Server
+const port = 8888
+const server = app.listen(port, listening)
+
+// Call back to debug
+function listening () {
+  console.log('Server running!')
+  console.log(`Running on localhost: ${port}`)
+}
