@@ -16,6 +16,12 @@
  * Define Global Variables
  *
 */
+// build the nav
+/* Get all elements with tag section */
+const sections = document.getElementsByTagName('section')
+
+/* Get the ul element of the navigation menu */
+const ulNav = document.getElementById('navbar__list')
 
 /**
  * End Global Variables
@@ -48,13 +54,6 @@ function isInViewport (elem) {
  * Begin Main Functions
  *
 */
-
-// build the nav
-/* Get all elements with tag section */
-const sections = document.getElementsByTagName('section')
-
-/* Get the ul element of the navigation menu */
-const ulNav = document.getElementById('navbar__list')
 
 /* For each section, add a li element in the navigation menu with the hyperlink to the section */
 for (let i = 0; i < sections.length; i++) {
