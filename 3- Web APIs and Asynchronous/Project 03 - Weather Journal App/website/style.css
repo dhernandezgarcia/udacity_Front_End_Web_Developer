@@ -76,6 +76,11 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
+#entryHolder {
+    display: flex;
+    flex-direction: column;
+}
+
 .vertical-center {
     margin: 0;
     position: absolute;

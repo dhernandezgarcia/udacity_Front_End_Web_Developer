@@ -47,6 +47,7 @@ app.post('/weatherInfo', addWeatherInfo)
 function addWeatherInfo (req, res) {
   newEntry = {
     date: req.body.date,
+    city: req.body.city,
     temp: req.body.temp,
     content: req.body.content
   }
