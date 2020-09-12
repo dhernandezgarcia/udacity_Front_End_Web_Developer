@@ -23,24 +23,6 @@ app.use(cors())
 // Initialize the main project folder
 app.use(express.static('website'))
 
-// Setup Server
-const port = 8888
-const server = app.listen(port, listening)
-
-// Call back to debug
-function listening () {
-  console.log('Server running!')
-  console.log(`Running on localhost: ${port}`)
-}
-
-// GET route
-app.get('/all', getData)
-
-function getData (req, res) {
-  res.send(projectData)
-  console.log(projectData)
-}
-
 // POST route
 app.post('/weatherInfo', addWeatherInfo)
 
@@ -54,5 +36,25 @@ function addWeatherInfo (req, res) {
 
   projectData.push(newEntry)
   res.send(projectData)
+  console.log('POST: ')
   console.log(projectData)
+}
+
+// GET route
+app.get('/database', getData)
+
+function getData (req, res) {
+  res.send(projectData)
+  console.log('GET: ')
+  console.log(projectData)
+}
+
+// Setup Server
+const port = 8888
+const server = app.listen(port, listening)
+
+// Call back to debug
+function listening () {
+  console.log('Server running!')
+  console.log(`Running on localhost: ${port}`)
 }

@@ -57,7 +57,8 @@ const getWeatherInfo = async (baseURL, zipCode, key) => {
 
 // Update UI with the information retrieved from the API
 const updateUI = async () => {
-  const request = await fetch ('/all')
+  const request = await fetch ('/database')
+
   try {
     const allData = await request.json()
     document.getElementById('date').innerHTML = 'Date: ' + allData[allData.length - 1].date
@@ -67,4 +68,8 @@ const updateUI = async () => {
   } catch (error) {
     console.log('Error occurred! ', error)
   }
+}
+
+window.onload = () => {
+  updateUI()
 }
