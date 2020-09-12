@@ -17,7 +17,7 @@ function performAction (e) {
   getWeatherInfo(baseURL, zipCode, apiKey)
     .then(function (data) {
     // Add data to POST request
-      postData('/weatherInfo', { date: newDate, temp: data.main.temp, content: feeling })
+      postData('/weatherInfo', { date: newDate, city: data.name, temp: data.main.temp, content: feeling })
     })
     .then(
       updateUI()
@@ -60,10 +60,10 @@ const updateUI = async () => {
   const request = await fetch ('/all')
   try {
     const allData = await request.json()
-    console.log(`All data received: ${allData[allData.length - 1].date}`)
-    document.getElementById('date').innerHTML = allData[allData.length - 1].date
-    document.getElementById('temp').innerHTML = allData[allData.length - 1].temp
-    document.getElementById('content').innerHTML = allData[allData.length - 1].content
+    document.getElementById('date').innerHTML = 'Date: ' + allData[allData.length - 1].date
+    document.getElementById('city').innerHTML = 'City: ' + allData[allData.length - 1].city
+    document.getElementById('temp').innerHTML = 'Temperature: ' + allData[allData.length - 1].temp
+    document.getElementById('content').innerHTML = 'Feeling: ' + allData[allData.length - 1].content
   } catch (error) {
     console.log('Error occurred! ', error)
   }
