@@ -69,7 +69,7 @@ const updateUI = async () => {
     const allData = await request.json()
     document.getElementById('date').innerHTML = 'Date: ' + allData[allData.length - 1].date
     document.getElementById('city').innerHTML = 'City: ' + allData[allData.length - 1].city
-    document.getElementById('temp').innerHTML = 'Temperature: ' + allData[allData.length - 1].temp
+    document.getElementById('temp').innerHTML = 'Temperature: ' + allData[allData.length - 1].temp + ' ºC'
     document.getElementById('content').innerHTML = 'Feeling: ' + allData[allData.length - 1].content
   } catch (error) {
     console.log('Error occurred! ', error)
