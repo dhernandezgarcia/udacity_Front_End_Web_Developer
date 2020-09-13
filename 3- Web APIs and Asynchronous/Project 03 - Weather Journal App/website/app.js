@@ -15,19 +15,23 @@ document.getElementById('generate').addEventListener('click', performAction)
 function performAction (e) {
   const zipCode = document.getElementById('zip').value
   const feeling = document.getElementById('feelings').value
-  getWeatherInfo(baseURL, zipCode, apiKey, units)
-    .then(function (data) {
-    // Add data to POST request
-      postData('/weatherInfo', {
-        date: newDate,
-        city: data.name,
-        temp: data.main.temp,
-        content: feeling
+  if (!zipCode) {
+    alert('Zip code is empty! Please introduce a value!')
+  } else {
+    getWeatherInfo(baseURL, zipCode, apiKey, units)
+      .then(function (data) {
+      // Add data to POST request
+        postData('/weatherInfo', {
+          date: newDate,
+          city: data.name,
+          temp: data.main.temp,
+          content: feeling
+        })
+          .then(
+            updateUI()
+          )
       })
-        .then(
-          updateUI()
-        )
-    })
+  }
 }
 
 // Async POST
