@@ -18,11 +18,16 @@ function performAction (e) {
   getWeatherInfo(baseURL, zipCode, apiKey, units)
     .then(function (data) {
     // Add data to POST request
-      postData('/weatherInfo', { date: newDate, city: data.name, temp: data.main.temp, content: feeling })
+      postData('/weatherInfo', {
+        date: newDate,
+        city: data.name,
+        temp: data.main.temp,
+        content: feeling
+      })
+        .then(
+          updateUI()
+        )
     })
-    .then(
-      updateUI()
-    )
 }
 
 // Async POST
