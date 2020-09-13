@@ -3,6 +3,7 @@
 // Define base URL and API key for the Weather App
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
 const apiKey = '&APPID=2811e8a313297e9b8318cdfb32fbd223'
+const units = '&units=metric'
 
 // Create a new date instance dynamically with JS
 let d = new Date()
@@ -14,7 +15,7 @@ document.getElementById('generate').addEventListener('click', performAction)
 function performAction (e) {
   const zipCode = document.getElementById('zip').value
   const feeling = document.getElementById('feelings').value
-  getWeatherInfo(baseURL, zipCode, apiKey)
+  getWeatherInfo(baseURL, zipCode, apiKey, units)
     .then(function (data) {
     // Add data to POST request
       postData('/weatherInfo', { date: newDate, city: data.name, temp: data.main.temp, content: feeling })
@@ -44,8 +45,8 @@ const postData = async (url = '', data = {}) => {
 }
 
 // Get Weather Info from the API
-const getWeatherInfo = async (baseURL, zipCode, key) => {
-  const res = await fetch (baseURL + zipCode + key)
+const getWeatherInfo = async (baseURL, zipCode, key, units) => {
+  const res = await fetch (baseURL + zipCode + key + units)
   try {
     const data = await res.json()
     console.log(data)
